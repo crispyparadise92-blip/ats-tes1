@@ -1930,7 +1930,6 @@ function DataATSApp({ defaultUrl }) {
       clearInterval(interval);
       document.removeEventListener("visibilitychange", onVisible);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [scriptUrl]);
 
   const kabupatenOptions = useMemo(() => {
