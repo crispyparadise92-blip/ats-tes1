@@ -1920,15 +1920,12 @@ function DataATSApp({ defaultUrl }) {
 
     checkAndSync(scriptUrl);
 
-    const interval = setInterval(() => checkAndSync(scriptUrl), 45000);
-
     const onVisible = () => {
       if (document.visibilityState === "visible") checkAndSync(scriptUrl);
     };
     document.addEventListener("visibilitychange", onVisible);
 
     return () => {
-      clearInterval(interval);
       document.removeEventListener("visibilitychange", onVisible);
     };
   }, [scriptUrl]);
